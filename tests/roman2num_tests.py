@@ -39,6 +39,18 @@ def test_basics2():
 	for num in xrange(0, 10):
 		assert_equal(n2r(num+1), inputs[num])
 
+def test_vinculus():
+	counter = 0
+	for i in xrange(5000, 6000, 7):
+		assert_equal(i, r2n(n2r(i)))
+		counter += 1
+
+	logspace = (i*31**ex for ex in range(2, 35) for i in range(1, 31, 3))
+	for i in logspace: 
+		assert_equal(i, r2n(n2r(i)))
+		counter += 1
+
+
 def test_rare_forms():
 	# These have historical usage. The whole system is not really standardized. 
 	inputs = ['IIII', 'VIIII', 'XIIX', 'IIXX', 'IC', 'IIC', 'MDCCCCX', 'MCMX', 'MDCDIII']

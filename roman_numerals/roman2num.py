@@ -34,5 +34,33 @@ def smallr2n(roman_str):
 	pass
 
 def r2n(roman_str):
-	return smallr2n(roman_str)
+	num = 0; 
+	vin_mul = 1000; 
+	vin_exp = 0; 
+	starti = 0;
+	prevc = ""
+
+	if roman_str[0] == '(': # Encountered parens/vinculus notation
+		for i, c in enumerate(roman_str):
+			if c == '(':
+				vin_exp += 1
+				starti = i+1
+			elif c == ')':
+				parse_s = roman_str[starti:i]
+				print parse_s
+				num += vin_mul**vin_exp * smallr2n(parse_s) #smallr2n(roman_str[starti:i-1])
+				vin_exp -= 1
+				starti = i+1
+				if vin_exp == 0: 
+					num += smallr2n(roman_str[i+1:]) # Handle last block outside parens e.g.. ...)XII
+					break
+			else:
+				pass
+			prevc = c; 
+		return num
+	else: # Smaller number.
+		return smallr2n(roman_str)
+
+
+
 
