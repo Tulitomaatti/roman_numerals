@@ -5,6 +5,7 @@ The functions r2n and n2r will convert roman numerals to integers and natural nu
 ## Works: 
 
 * Conversion to/from with numbers in standard form from 1-4999
+* Conversion to/from natural numbers, when the overline in vinculus forms is replaced with parentheses groups. 
 * Converting natural numbers to roman numerals, where parenthesis are used to replace overline in expressing large numbers in vinculum. 
 
 ## Doesn't work: 
@@ -13,7 +14,7 @@ The functions r2n and n2r will convert roman numerals to integers and natural nu
 
 ## TODO: 
 
-* Decoding vinculus forms
+* Decoding vinculus forms, from LaTeX etc / custom. 
 * LaTeX / KaTeX / ? output for vinculus forms
 * Nice errors handling / warnings. 
 * Proper packaging 
