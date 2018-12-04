@@ -21,18 +21,22 @@ if __name__ == '__main__':
     parser.add_argument('-f', '--faster', action='store_true',
                         help="""Skip some validation of input and results. May cause parsing of 
                         nonstandard forms to fail or silently return erroneous results.""")
-    parser.add_argument('-s', '--roman_string', nargs='*', type=str)
+    parser.add_argument('-s', '--roman_string', nargs=argparse.REMAINDER, type=str)
 
-    args = parser.parse_args()
+    argtuple = parser.parse_known_args()
+    args = argtuple[0]
+    stringargs = argtuple[1]  # All unknown args must be strings after the -s ?
 
     if args.faster:
         if args.roman_string is not None:  # -s overrides infile & outfile.
             for s in args.roman_string:
-                print r2n(s)
+                print r2n(s),
+            print
         else:  # Read from specified files or defaults.
             for line in args.infile:
                 for word in line.split():  # Assume space-separated numerals
-                    print >> args.outfile, r2n(word)
+                    print >> args.outfile, r2n(word),
+                print
 
             args.infile.close()
             args.outfile.close()

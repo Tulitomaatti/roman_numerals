@@ -28,11 +28,12 @@ if __name__ == '__main__':
     if args.faster:
         if args.arabic_numeral_string is not None:  # -s overrides infile & outfile.
             for s in args.arabic_numeral_string:
-                print n2r(s)
+                print n2r(s),
         else:  # Read from specified files or defaults.
             for line in args.infile:
                 for word in line.split():  # Assume space-separated int() parseable numerals
-                    print >> args.outfile, n2r(int(word))
+                    print >> args.outfile, n2r(int(word)),
+                print
 
             args.infile.close()
             args.outfile.close()
