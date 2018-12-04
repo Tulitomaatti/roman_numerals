@@ -5,8 +5,13 @@ try:
 except ImportError:
     from distutils.core import setup
 
+with open("README.md", "r") as fh:
+    long_desc = fh.read()
+
 setup(
     description='Roman numeral to/from converter scripts',
+    long_description=long_desc,
+    long_description_content_type="text/markdown",
     author='Eetu Lampsijärvi',
     url='https://github.com/Tulitomaatti/romanum',
     download_url='none',
@@ -15,5 +20,8 @@ setup(
     install_requires=['nose'],
     packages=['romanum'],
     scripts=['bin/n2r', 'bin/r2n'],
-    name='romanum'
+    name='romanum',
+    classifiers=[
+        "Programming Language :: Python :: 2",
+    ]
 )
