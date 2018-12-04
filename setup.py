@@ -14,7 +14,7 @@ setup(
     long_description_content_type="text/markdown",
     author='Eetu Lampsijärvi',
     url='https://github.com/Tulitomaatti/romanum',
-    download_url='none',
+    download_url='https://github.com/Tulitomaatti/romanum',
     author_email='eetu.lampsijarvi@helsinki.fi',
     version='0.1',
     install_requires=['nose'],
