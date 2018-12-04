@@ -9,8 +9,8 @@ The scripts (and functions) r2n and n2r will convert roman numerals to integers 
 
 ## Doesn't work: 
 
+* Input validation: **Use -f** and input clean inputs or face errors. 
 * Decoding some rarer "nonstandard" forms. 
-* Input validation. Input clean inputs or use -f for a forced naive attempt to parse whatever.
 
 ## TODO: 
 
